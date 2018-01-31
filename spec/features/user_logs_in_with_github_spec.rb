@@ -5,7 +5,7 @@ describe "user logs in" do
     expect(page).to have_link("Sign in with Github")
     click_link "Sign in with Github"
     expect(page).to have_content("Timothy Joo")
-    expect(page).to have_link("Logout")
+    
   end
 end
 
