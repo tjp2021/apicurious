@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 20180201183058) do
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "location"
+    t.string "bio"
+    t.string "image"
+    t.string "followers"
+    t.string "following"
+    t.string "repo_count"
   end
 
 end
