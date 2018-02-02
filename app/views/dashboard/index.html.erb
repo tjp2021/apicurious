@@ -33,5 +33,21 @@
       <br>
       <% end %>
     </div>
+    <br>
+    <div class="commit-info">
+      <% @commits.each do |commit| %>
+        <%= commit.message %><br>
+        <%= commit.full_name %><br>
+        <%= commit.commit_date %><br>
+      <% end %>
+    </div>
+<br>
+    <div class="org_info">
+      <% @orgs.each do |org| %>
+        <%= org.name %><br>
+        <%= org.description %><br>
+        <%= org.github %><br>
+      <% end %><br>
+    </div>
   </div>
 </div>
