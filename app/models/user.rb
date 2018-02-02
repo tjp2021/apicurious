@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-<<<<<<< HEAD
 
   def self.update_or_create(auth)
     user = User.find_by(uid: auth[:uid]) || User.new
@@ -12,9 +11,8 @@ class User < ApplicationRecord
                       }
 
     user.save!
-  
+
     user
   end
-=======
->>>>>>> master
+
 end
