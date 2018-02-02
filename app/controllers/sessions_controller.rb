@@ -1,4 +1,14 @@
 class SessionsController < ApplicationController
+<<<<<<< HEAD
+  def create
+    user = User.update_or_create(request.env["omniauth.auth"])
+    session[:id] = user.id
+    
+    redirect_to dashboard_index_path
+  end
+
+
+=======
 
   def create
     code = params['code']
@@ -25,4 +35,5 @@ class SessionsController < ApplicationController
   
     redirect_to dashboard_index_path
   end
+>>>>>>> master
 end

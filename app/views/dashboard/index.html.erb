@@ -1,3 +1,53 @@
-<div class="user-info-table">
-  <img src="" alt="">
+<div class="user-info-panel">
+  <div class="image-border">
+    <%= image_tag current_user.image, height: 200, width: 200 %>
+  </div>
+  <%= current_user.nickname %><br>
+  <%= current_user.name %><br>
+  <%= current_user.bio %><br>
+  <%= current_user.location %><br>
+</div>
+<br>
+<div class="main-panel">
+  <div class="main-panel-headers">
+    Overview
+    Repositories <%= current_user.repo_count %>
+    Stars
+    Followers <%= current_user.followers %>
+    Following <%= current_user.following %>
+  </div>
+  <div class="flexible-panel">
+
+    <div class="repo-info">
+      <% @repositories.each do |repo| %>
+      <div class="repo-name-title">
+        <%= repo.name %>
+      </div>
+      <div class="repo-description">
+        <%= repo.description %>
+      </div>
+      <div class="repo-language-update">
+        <%= repo.language %>
+        Updated at <%= Date.parse(repo.update_time) %>
+      </div>
+      <br>
+      <% end %>
+    </div>
+    <br>
+    <div class="commit-info">
+      <% @commits.each do |commit| %>
+        <%= commit.message %><br>
+        <%= commit.full_name %><br>
+        <%= commit.commit_date %><br>
+      <% end %>
+    </div>
+<br>
+    <div class="org_info">
+      <% @orgs.each do |org| %>
+        <%= org.name %><br>
+        <%= org.description %><br>
+        <%= org.github %><br>
+      <% end %><br>
+    </div>
+  </div>
 </div>
